@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">homework</string>
+    <string name="save_text">Сохранить</string>
+    <string name="clear_text">Очистить</string>
+    <string name="save_toast">Текст сохранен</string>
+    <string name="clear_toast">Текст удален</string>
+</resources>

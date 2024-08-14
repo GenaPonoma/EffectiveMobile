@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="ui.fragments.homeFragment.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_navigation_home_to_historyFragment"
+            app:destination="@id/historyFragment" />
+        <action
+            android:id="@+id/action_navigation_home_to_fovariteFragment"
+            app:destination="@id/fovariteFragment" />
+        <action
+            android:id="@+id/action_navigation_home_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+        <action
+            android:id="@+id/action_navigation_home_to_settingsFragment2"
+            app:destination="@id/settingsFragment" />
+        <action
+            android:id="@+id/action_navigation_home_to_fovariteFragment2"
+            app:destination="@id/fovariteFragment" />
+        <action
+            android:id="@+id/action_navigation_home_self"
+            app:destination="@id/navigation_home" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/historyFragment"
+        android:name="ui.fragments.historyFragment.HistoryFragment"
+        android:label="Мелениус"
+
+        tools:layout="@layout/fragment_history" />
+    <fragment
+        android:id="@+id/fovariteFragment"
+        android:name="ui.fragments.fovariteFragment.FovariteFragment"
+        android:label="fragment_fovarite"
+        tools:layout="@layout/fragment_fovarite">
+        <action
+            android:id="@+id/action_fovariteFragment_to_navigation_home"
+            app:destination="@id/navigation_home" />
+        <action
+            android:id="@+id/action_fovariteFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+        <action
+            android:id="@+id/action_fovariteFragment_to_settingsFragment2"
+            app:destination="@id/settingsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="ui.fragments.settingsFragment.SettingsFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings">
+        <action
+            android:id="@+id/action_settingsFragment_to_navigation_home"
+            app:destination="@id/navigation_home" />
+        <action
+            android:id="@+id/action_settingsFragment_to_fovariteFragment"
+            app:destination="@id/fovariteFragment" />
+        <action
+            android:id="@+id/action_settingsFragment_to_fovariteFragment2"
+            app:destination="@id/fovariteFragment" />
+    </fragment>
+
+
+</navigation>

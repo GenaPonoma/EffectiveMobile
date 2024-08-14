@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">homework</string>
+    <string name="help_name">Имя</string>
+    <string name="todo">TODO</string>
+    <string name="help_phone">Телефон</string>
+    <string name="heading_text_view">Пол</string>
+    <string name="switch_name">Получать уведомления</string>
+    <string name="about_new_products_and_offers">О новинках и предложениях</string>
+    <string name="about_authorization_on_the_device">Об авторизации на устройстве</string>
+    <string name="Paul_Je">Ж</string>
+    <string name="Paul_Me">М</string>
+    <string name="text_notifications">Изменения сохранены</string>
+</resources>

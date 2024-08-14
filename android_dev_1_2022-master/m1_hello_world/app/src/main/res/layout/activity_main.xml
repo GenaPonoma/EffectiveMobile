@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ImageButton
+        android:id="@+id/plusButton"
+        android:layout_width="90sp"
+        android:layout_height="90sp"
+        android:layout_gravity="right|bottom"
+        android:layout_margin="12sp"
+
+        android:src="@drawable/add" />
+
+    <ImageButton
+        android:id="@+id/minusButton"
+        android:layout_width="90sp"
+        android:layout_height="90sp"
+        android:layout_gravity="bottom"
+        android:layout_margin="12sp"
+
+        android:src="@drawable/remove" />
+
+    <TextView
+        android:id="@+id/placeCounter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|bottom"
+        android:layout_marginBottom="40sp"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/informationMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_gravity="center"
+        android:textSize="20sp"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/resetButton"
+        android:layout_width="171dp"
+        android:layout_height="120sp"
+        android:layout_gravity="center|top"
+        android:layout_marginTop="12sp"
+        android:background="@drawable/shape_reset_button"
+        android:text="@string/reset"
+        android:textAllCaps="false"
+        android:textSize="20sp"
+        android:visibility="invisible" />
+
+
+</FrameLayout>

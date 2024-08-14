@@ -1,0 +1,41 @@
+<resources>
+    <string name="app_name">Workhours</string>
+    <string name="title_review">Обзор</string>
+    <string name="title_add">Добавить</string>
+    <string name="title_managing">Управление</string>
+    <string name="title_more">Ещё</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="icons_name_filter">Фильтр</string>
+    <string name="header_start_add">Начало</string>
+    <string name="header_end_add">Конец</string>
+
+    <string name="work_with_projects_or_tasks">Работа с проектами или заданиями</string>
+    <string name="add_task">Добавить задание</string>
+    <string name="add_shift">Добавить смену</string>
+    <string name="select_date">Выбрать дату</string>
+    <string name="start">Начало</string>
+    <string name="june_12">12 июня</string>
+    <string name="june_13">13 июня</string>
+    <string name="select_time">Выбрать Время</string>
+    <string name="time_08_00">08:00</string>
+    <string name="time_20_00">20:00</string>
+    <string name="save_lable">Сохранить</string>
+
+
+    <string-array name="months">
+        <item>Январь</item>
+        <item>Февраль</item>
+        <item>Март</item>
+        <item>Апрель</item>
+        <item>Май</item>
+        <item>Июнь</item>
+        <item>Июль</item>
+        <item>Август</item>
+        <item>Сентабрь</item>
+        <item>Октябрь</item>
+        <item>Ноябрь</item>
+        <item>Декабрь</item>
+
+    </string-array>
+</resources>

@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Homework</string>
+    <string name="up_text">Верхняя строчка, настроенная из кода</string>
+    <string name="down_text">Нижняя строчка, настроенная из кода</string>
+</resources>

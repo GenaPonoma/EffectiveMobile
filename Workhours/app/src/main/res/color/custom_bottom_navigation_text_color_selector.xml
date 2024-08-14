@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Состояние нажатия -->
+    <item android:color="@color/customColor" android:state_checked="true" />
+
+    <!-- Состояние неактивности -->
+    <item android:color="#DEDEDE" android:state_checked="false" />
+</selector>

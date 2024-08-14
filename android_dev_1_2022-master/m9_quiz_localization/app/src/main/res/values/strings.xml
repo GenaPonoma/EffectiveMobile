@@ -1,0 +1,40 @@
+<resources>
+    <string name="app_name">Опросник</string>
+    <string name="content_text_button">Начать</string>
+
+
+    <string name="hint_toast">Пожалуйста, ответьте на все вопросы</string>
+    <string name="select_date">Выбрать дату рождения</string>
+
+
+    <string name="question1">Как тебе наш Andro id курс?</string>
+    <string name="answer1_1">на 2</string>
+    <string name="answer1_2">на 3</string>
+    <string name="answer1_3">на 4</string>
+    <string name="answer1_4">на 5</string>
+    <string name="feedback1_1">Вам не нравится наш курс.</string>
+    <string name="feedback1_2">Вас удовлетворяет наш курс.</string>
+    <string name="feedback1_3">Вы оценили наш курс хорошо.</string>
+    <string name="feedback1_4">Вы оценили наш курс отлично.</string>
+
+    <string name="question2">Порекомендуешь его друзьям?</string>
+    <string name="answer2_1">Обзательно</string>
+    <string name="answer2_2">Уже порекомендовал</string>
+    <string name="answer2_3">Посмотрим, что будет дальше</string>
+    <string name="answer2_4">Нет</string>
+    <string name="feedback2_1">Вы готовы порекомендовать наш курс.</string>
+    <string name="feedback2_2">Вы уже порекомендовали курс своим друзьям.</string>
+    <string name="feedback2_3">Вам нужно больше времени, чтобы порекомендовать наш курс.</string>
+    <string name="feedback2_4">Вы не готовы рекомендовать наш курс.</string>
+
+    <string name="question3">Пользовался ли ты обратной связью?</string>
+    <string name="answer3_1">Да</string>
+    <string name="answer3_2">Еще нет, но сейчас воспользуюсь</string>
+    <string name="answer3_3">Нет, еще не приходилось</string>
+    <string name="answer3_4">Нет, и не буду</string>
+    <string name="feedback3_1">Спасибо за обратную связь!</string>
+    <string name="feedback3_2">Спасибо за обратную связь!</string>
+    <string name="feedback3_3">Ждем вашу обратную связь!</string>
+    <string name="feedback3_4">Мы надеемся, что у вас пояится возможность дать нам обратную связь.</string>
+
+</resources>

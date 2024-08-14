@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:contentDescription="@string/todo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0"
+        app:srcCompat="@drawable/kot" />
+
+    <com.google.android.material.textfield.TextInputLayout
+
+        android:id="@+id/text_input_name"
+        android:layout_width="0dp"
+        android:layout_height="90dp"
+        android:layout_margin="12dp"
+        android:hint="@string/help_name"
+        app:counterEnabled="true"
+        app:counterMaxLength="40"
+        app:endIconMode="clear_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imageView">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/text_input_edit_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+
+        android:id="@+id/text_input_phone"
+        style="@style/YourCustomFilledBoxStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        android:hint="@string/help_phone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_input_name">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/text_input_edit_phone"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="phone" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/text_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16sp"
+        android:text="@string/heading_text_view"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/text_input_phone"
+        app:layout_constraintTop_toBottomOf="@+id/text_input_phone" />
+
+    <RadioGroup
+        android:id="@+id/radio_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@+id/text_header"
+        app:layout_constraintTop_toBottomOf="@+id/text_header">
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Paul_Me" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Paul_Je" />
+    </RadioGroup>
+
+    <com.google.android.material.switchmaterial.SwitchMaterial
+       android:id="@+id/receive_updates"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/switch_name"
+        app:layout_constraintEnd_toEndOf="@+id/text_input_phone"
+        app:layout_constraintStart_toStartOf="@+id/radio_group"
+        app:layout_constraintTop_toBottomOf="@+id/radio_group" />
+
+    <CheckBox
+        android:id="@+id/checkbox_1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:text="@string/about_authorization_on_the_device"
+        app:layout_constraintEnd_toEndOf="@+id/text_input_phone"
+        app:layout_constraintStart_toStartOf="@+id/radio_group"
+        app:layout_constraintTop_toBottomOf="@+id/radio_group">
+
+    </CheckBox>
+
+    <CheckBox
+        android:id="@+id/checkbox_2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/about_new_products_and_offers"
+        app:layout_constraintEnd_toEndOf="@+id/text_input_phone"
+        app:layout_constraintStart_toStartOf="@+id/radio_group"
+        app:layout_constraintTop_toBottomOf="@+id/checkbox_1">
+
+    </CheckBox>
+
+    <TextView
+        android:id="@+id/title_"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16sp"
+        android:text="Баллы"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/checkbox_2"
+        app:layout_constraintTop_toBottomOf="@+id/checkbox_2" />
+
+    <com.google.android.material.progressindicator.LinearProgressIndicator
+        android:id="@+id/progress_horizontal"
+        android:layout_marginTop="12dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:progress="44"
+        app:layout_constraintEnd_toEndOf="@+id/checkbox_2"
+        app:layout_constraintStart_toStartOf="@+id/title_"
+        app:layout_constraintTop_toBottomOf="@+id/title_" />
+
+    <TextView
+        android:id="@+id/progress_set"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/checkbox_2"
+        app:layout_constraintTop_toBottomOf="@+id/checkbox_2" />
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/save_button"
+        android:layout_marginTop="12dp"
+        android:text="Сохранить"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:shadowRadius="23"
+        app:layout_constraintStart_toStartOf="@id/progress_horizontal"
+        app:layout_constraintEnd_toEndOf="@+id/checkbox_2"
+        app:layout_constraintTop_toBottomOf="@+id/progress_horizontal"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Questionnaire</string>
+    <string name="content_text_button">Start</string>
+    <string name="hint_toast">Please answer all questions</string>
+    <string name="select_date">Select Date of Birth</string>
+
+    <string name="question1">How do you like our Android course?</string>
+    <string name="answer1_1">2 out of 5</string>
+    <string name="answer1_2">3 out of 5</string>
+    <string name="answer1_3">4 out of 5</string>
+    <string name="answer1_4">5 out of 5</string>
+    <string name="feedback1_1">You don t like our course.</string>
+    <string name="feedback1_2">You are satisfied with our course.</string>
+    <string name="feedback1_3">You rated our course well.</string>
+    <string name="feedback1_4">You rated our course excellent.</string>
+
+    <string name="question2">Would you recommend it to your friends?</string>
+    <string name="answer2_1">Definitely</string>
+    <string name="answer2_2">Already recommended</string>
+    <string name="answer2_3">Lets see what happens next</string>
+    <string name="answer2_4">No</string>
+    <string name="feedback2_1">You are ready to recommend our course.</string>
+    <string name="feedback2_2">You have already recommended the course to your friends.</string>
+    <string name="feedback2_3">You need more time to recommend our course.</string>
+    <string name="feedback2_4">You are not ready to recommend our course.</string>
+
+    <string name="question3">Have you used the feedback?</string>
+    <string name="answer3_1">Yes</string>
+    <string name="answer3_2">Not yet, but I will use it now</string>
+    <string name="answer3_3">No, I havent had to yet</string>
+    <string name="answer3_4">No, and I wont</string>
+    <string name="feedback3_1">Thank you for your feedback!</string>
+    <string name="feedback3_2">Thank you for your feedback!</string>
+    <string name="feedback3_3">We are waiting for your feedback!</string>
+    <string name="feedback3_4">We hope you will have the opportunity to give us feedback.</string>
+
+
+</resources>

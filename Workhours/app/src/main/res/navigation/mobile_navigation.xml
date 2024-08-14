@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_review">
+
+    <fragment
+        android:id="@+id/navigation_review"
+        android:name="com.example.workhours.ui.review.ReviewFragment"
+        android:label="@string/title_review"
+        tools:layout="@layout/fragment_review" >
+        <action
+            android:id="@+id/action_navigation_review_to_moreDetailed"
+            app:destination="@id/moreDetailed" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_add"
+        android:name="com.example.workhours.ui.add.AddFragment"
+        android:label="@string/title_add"
+        tools:layout="@layout/fragment_managing" />
+
+    <fragment
+        android:id="@+id/navigation_managing"
+        android:name="com.example.workhours.ui.managing.ManagingFragment"
+        android:label="@string/title_managing"
+        tools:layout="@layout/fragment_add" />
+    <fragment
+        android:id="@+id/navigation_more"
+        android:name="com.example.workhours.ui.more.MoreFragment"
+        android:label="@string/title_managing"
+        tools:layout="@layout/fragment_add" />
+    <fragment
+        android:id="@+id/moreDetailed"
+        android:name="com.example.workhours.ui.moreDetailed.MoreDetailed"
+        android:label="Данные за месяц"
+        tools:layout="@layout/fragment_more_detailed" >
+        <action
+            android:id="@+id/action_moreDetailed_to_navigation_review"
+            app:destination="@id/navigation_review" />
+    </fragment>
+</navigation>
+
+

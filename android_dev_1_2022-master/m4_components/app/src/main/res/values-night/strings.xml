@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="help_phone">Телефон</string>
+    <string name="heading_text_view">Пол</string>
+    <string name="switch_name">Получать уведомдения</string>
+    <string name="about_new_products_and_offers">О навинках и предложениях</string>
+    <string name="Paul_Je">Ж</string>
+    <string name="Paul_Me">М</string>
+</resources>
