@@ -42,7 +42,10 @@ android {
 
 dependencies {
 
-
+    val dagger_version = "2.55"
+    kapt ("com.google.dagger:dagger-compiler:$dagger_version")
+    implementation ("com.google.dagger:dagger:$dagger_version")
+    annotationProcessor ("com.google.dagger:dagger-compiler:$dagger_version")
     implementation(libs.androidx.room.runtime)
     implementation(libs.androidx.navigation.fragment.ktx)
     implementation(libs.androidx.room.ktx)

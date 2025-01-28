@@ -8,8 +8,9 @@ import com.example.effectivemobile.data.model.room.VacancyDao
 import com.example.effectivemobile.retrofit.retrofit
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
+import javax.inject.Inject
 
-class MainRepository(private val dao: VacancyDao) {
+class MainRepository @Inject constructor(private val dao: VacancyDao) {
     suspend fun getData(): Work {
         return retrofit.getWorkApi(
             "1z4TbeDkbfXkvgpoJprXbN85uCcD7f00r",

@@ -13,8 +13,9 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.forEach
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import javax.inject.Inject
 
-class SearchViewModel(private val repository: MainRepository) : ViewModel() {
+class SearchViewModel @Inject constructor(private val repository: MainRepository) : ViewModel() {
 
     private var _offers = MutableLiveData<List<Offer>>()
     val offers: LiveData<List<Offer>> get() = _offers

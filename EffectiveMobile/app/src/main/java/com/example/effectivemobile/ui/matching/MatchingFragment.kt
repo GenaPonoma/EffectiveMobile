@@ -14,21 +14,31 @@ import androidx.navigation.fragment.findNavController
 import com.example.effectivemobile.R
 import com.example.effectivemobile.app.App
 import com.example.effectivemobile.databinding.FragmentMatchingBinding
+import com.example.effectivemobile.ui.matching.MatchingViewModel
+import com.example.effectivemobile.ui.matching.MatchingViewModelFactory
 import com.example.effectivemobile.ui.matching.adapter.VacancyMatchingAdapter
 import kotlinx.coroutines.launch
-
+import javax.inject.Inject
 
 class MatchingFragment : Fragment() {
 
+    @Inject
+    lateinit var matchingViewModelFactory: MatchingViewModelFactory
+
     private var _binding: FragmentMatchingBinding? = null
     private val binding get() = _binding!!
+
     private val matchingAdapter = VacancyMatchingAdapter()
+    private val viewModel: MatchingViewModel by viewModels { matchingViewModelFactory }
 
-    private val viewModel: MatchingViewModel by viewModels { MatchingViewModelFactory((requireActivity().application as App).db.vacancyDao()) }
-
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        (requireActivity().application as App).appComponent.inject(this)
+    }
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentMatchingBinding.inflate(inflater, container, false)
@@ -37,8 +47,16 @@ class MatchingFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.recyclerVacanciesView.adapter = matchingAdapter
+        setupRecyclerView()
+        observeData()
+        setupNavigation()
+    }
 
+    private fun setupRecyclerView() {
+        binding.recyclerVacanciesView.adapter = matchingAdapter
+    }
+
+    private fun observeData() {
         viewLifecycleOwner.lifecycleScope.launch {
             viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
                 launch {
@@ -48,7 +66,9 @@ class MatchingFragment : Fragment() {
                 }
             }
         }
+    }
 
+    private fun setupNavigation() {
         binding.buttonBack.setOnClickListener {
             findNavController().navigate(R.id.action_MatchingFragment_to_SearchFragment)
         }

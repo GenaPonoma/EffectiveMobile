@@ -1,20 +1,20 @@
 package com.example.effectivemobile.app
 
 import android.app.Application
-import androidx.room.Room
-import com.example.effectivemobile.data.model.room.AppDatabase
-
-
+import com.example.effectivemobile.di.AppComponent
+import com.example.effectivemobile.di.AppModule
+import com.example.effectivemobile.di.DaggerAppComponent
 
 
 class App : Application() {
-    lateinit var db: AppDatabase
+    lateinit var appComponent: AppComponent
+
     override fun onCreate() {
         super.onCreate()
-        db = Room.databaseBuilder(
-            this,
-            AppDatabase::class.java,
-            "app_database"
-        ).build()
+
+        appComponent = DaggerAppComponent.builder()
+            .appModule(AppModule(this))
+            .build()
+        appComponent.inject(this)
     }
 }
