@@ -28,7 +28,7 @@ class VacancyAdapter(private val onItemClicked: (Int) -> Unit) :
                 if (item.lookingNumber != null) {
                     viewsCountLooking.text = root.context.resources.getQuantityString(
                         R.plurals.count_looking,
-                        item.lookingNumber,
+                        item.lookingNumber!!,
                         item.lookingNumber
                     )
                 } else {

@@ -6,7 +6,7 @@ import androidx.room.Query
 import androidx.room.Update
 import com.example.effectivemobile.data.model.Vacancy
 
-
+@Dao
 interface VacancyDao {
 
 //    @Query("SELECT * FROM vacancies WHERE id = :id")

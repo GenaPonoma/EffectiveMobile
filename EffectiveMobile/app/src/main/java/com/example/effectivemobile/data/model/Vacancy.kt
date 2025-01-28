@@ -1,47 +1,83 @@
 package com.example.effectivemobile.data.model
 
 
+import androidx.room.ColumnInfo
+import androidx.room.Embedded
+import androidx.room.Entity
+import androidx.room.Ignore
+import androidx.room.PrimaryKey
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 
 
 @JsonClass(generateAdapter = true)
-
-data class Vacancy(
-
+@Entity(tableName = "vacancy")
+data class Vacancy constructor(
+    @PrimaryKey(autoGenerate = true)
+    var idN: Int?,
+    @Embedded(prefix = "address_")
     @Json(name = "address")
-    val address: Address?,
+    var address: Address?,
+    @ColumnInfo(name = "appliedNumber")
     @Json(name = "appliedNumber")
-    val appliedNumber: Int?,
+    var appliedNumber: Int?,
+    @ColumnInfo(name = "company")
     @Json(name = "company")
 
-    val company: String?,
+    var company: String?,
+    @ColumnInfo(name = "description")
     @Json(name = "description")
-    val description: String?,
+    var description: String?,
+    @Embedded(prefix = "experience_")
     @Json(name = "experience")
-
-    val experience: Experience?,
+    var experience: Experience?,
+    @ColumnInfo(name = "id")
     @Json(name = "id")
-    val id: String?,
+    var id: String?,
+    @ColumnInfo(name = "isFavorite")
     @Json(name = "isFavorite")
     var isFavorite: Boolean?,
+    @ColumnInfo(name = "lookingNumber")
     @Json(name = "lookingNumber")
-    val lookingNumber: Int?,
+    var lookingNumber: Int?,
+    @ColumnInfo(name = "publishedDate")
     @Json(name = "publishedDate")
-    val publishedDate: String?,
-
+    var publishedDate: String?,
+    @Ignore
     @Json(name = "questions")
-    val questions: List<String>?,
+    var questions: List<String>?,
+    @ColumnInfo(name = "responsibilities")
     @Json(name = "responsibilities")
-    val responsibilities: String?,
+    var responsibilities: String?,
 
     @Json(name = "salary")
-    val salary: Salary?,
-
+    @Embedded(prefix = "salary_")
+    var salary: Salary?,
+    @Ignore
     @Json(name = "schedules")
-    val schedules: List<String>?,
+    var schedules: List<String>?,
+    @ColumnInfo(name = "title")
     @Json(name = "title")
-    val title: String?
+    var title: String?
 
 
-)
+){
+    // Пустой конструктор для Room
+    constructor() : this(
+        0,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+    )
+}

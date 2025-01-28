@@ -35,7 +35,7 @@ class VacancyMatchingAdapter :
                 if (item.lookingNumber != null) {
                     viewsCountLooking.text = root.context.resources.getQuantityString(
                         R.plurals.count_looking,
-                        item.lookingNumber,
+                        item.lookingNumber!!,
                         item.lookingNumber
                     )
                 } else {
