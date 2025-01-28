@@ -1,0 +1,29 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.EffectiveMobile" parent="Theme.Material3.Dark.NoActionBar">
+        <item name="android:windowBackground">@color/shadows</item>
+        <item name="colorPrimaryDark">@color/shadows</item>
+
+    </style>
+
+    <style name="BlueButtonStyle" parent="Widget.MaterialComponents.Button.UnelevatedButton">
+        <item name="backgroundTint">@color/blue</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+    <style name="GreenButtonStyle" parent="Widget.MaterialComponents.Button.UnelevatedButton">
+        <item name="backgroundTint">@color/green</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="CustomBottomNavigationStyle" parent="Widget.Material3.BottomAppBar">
+        <item name="backgroundTint">@color/shadows</item>
+        <item name="tickColorActive">@color/shadows</item>
+        <item name="colorOnContainer">@color/shadows</item>
+        <item name="itemIconTint">@color/custom_bottom_navigation_text_color_selector</item>
+        <item name="itemTextColor">@color/custom_bottom_navigation_text_color_selector</item>
+
+    </style>
+    <style name="App.Custom.Indicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+        <item name="android:color">@color/shadows</item>
+    </style>
+</resources>

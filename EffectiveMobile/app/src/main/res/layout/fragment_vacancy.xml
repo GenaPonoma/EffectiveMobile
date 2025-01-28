@@ -1,0 +1,409 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        tools:context=".ui.vacancy.VacancyFragment">
+
+        <ImageView
+            android:id="@+id/button_back"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="18dp"
+            android:src="@drawable/back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_marginEnd="16dp"
+            android:src="@drawable/visible"
+            app:layout_constraintBottom_toBottomOf="@+id/button_back"
+            app:layout_constraintEnd_toStartOf="@+id/imageView3"
+            app:layout_constraintTop_toTopOf="@+id/button_back" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginEnd="16dp"
+            android:src="@drawable/repost"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+            app:layout_constraintEnd_toStartOf="@+id/imageView4"
+            app:layout_constraintTop_toTopOf="@+id/imageView2" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginEnd="16dp"
+            android:src="@drawable/favorites"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/imageView3" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="42dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button_back">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/textView_job_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="12dp"
+                    android:fontFamily="@font/sf_pro_display_semibold"
+                    android:text="UI/UX Designer"
+                    android:textSize="22sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/textView_salary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/sf_pro_display_semibold"
+                    android:text="Уровень дохода не указан"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="@+id/textView_job_title"
+                    app:layout_constraintTop_toBottomOf="@+id/textView_job_title" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/textView_work_type"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/sf_pro_display_semibold"
+                    android:text="Полная занятость, полный день"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="@+id/textView_experience"
+                    app:layout_constraintTop_toBottomOf="@+id/textView_experience" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/textView_experience"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/sf_pro_display_semibold"
+                    android:text="Требуемый опыт: от 1 года до 3 лет"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="@+id/textView_salary"
+                    app:layout_constraintTop_toBottomOf="@+id/textView_salary" />
+
+                <LinearLayout
+                    android:id="@+id/linearLayout2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginEnd="16dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView_work_type">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/card_view_applicants"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_weight="1"
+                        android:background="@color/dark_green"
+                        app:cardCornerRadius="8dp"
+                        app:cardElevation="0dp">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@color/dark_green">
+
+                            <ImageView
+                                android:id="@+id/icon_profile"
+                                android:layout_width="16dp"
+                                android:layout_height="16dp"
+                                android:layout_marginTop="8dp"
+                                android:layout_marginEnd="8dp"
+                                android:background="@drawable/circle_gren"
+                                android:padding="2dp"
+                                android:src="@drawable/profile_down"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/text_view_applicant_count"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:layout_marginEnd="21dp"
+                                android:text="147 человек уже\n откликнулись"
+                                android:textColor="@color/white"
+                                android:textSize="14sp"
+                                app:layout_constraintEnd_toStartOf="@+id/icon_profile"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/card_view_active_views"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_weight="1"
+                        android:background="@color/dark_green"
+                        app:cardCornerRadius="8dp"
+                        app:cardElevation="0dp">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@color/dark_green">
+
+                            <ImageView
+                                android:id="@+id/icon_profile_down"
+                                android:layout_width="16dp"
+                                android:layout_height="16dp"
+                                android:layout_marginTop="8dp"
+                                android:layout_marginEnd="8dp"
+                                android:background="@drawable/circle_gren"
+                                android:padding="2dp"
+                                android:src="@drawable/profile_down"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/text_view_active_views"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:layout_marginEnd="21dp"
+                                android:layout_marginBottom="6dp"
+                                android:text="2 человека\n сейчас смотрят"
+                                android:textColor="@color/white"
+                                android:textSize="14sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toStartOf="@+id/icon_profile_down"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                tools:ignore="HardcodedText" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </androidx.cardview.widget.CardView>
+                </LinearLayout>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_view_company_location"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginEnd="16dp"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="0dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/text_view_company_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:layout_marginBottom="12dp"
+                            android:drawableRight="@drawable/verification"
+                            android:text="Мобирикс"
+                            android:textColor="@color/white"
+                            app:layout_constraintBottom_toTopOf="@+id/image_view_map"
+                            app:layout_constraintStart_toStartOf="@+id/image_view_map"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:ignore="HardcodedText" />
+
+                        <ImageView
+                            android:id="@+id/image_view_map"
+                            android:layout_width="0dp"
+                            android:layout_height="58dp"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginEnd="16dp"
+                            android:background="@drawable/r_maps"
+                            android:fitsSystemWindows="true"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/maps_stat_j"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/text_view_address"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="Минск, улица Бирюзова, 4/5"
+                            android:textColor="@color/white"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="@+id/image_view_map"
+                            app:layout_constraintTop_toBottomOf="@+id/image_view_map"
+                            tools:ignore="HardcodedText" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.cardview.widget.CardView>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/text_view_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginEnd="16dp"
+                    android:fontFamily="@font/sf_pro_display_medium"
+                    android:text="MOBYRIX - динамически развивающаяся продуктовая IT-компания, специализирующаяся на разработке мобильных приложений для iOS и Android. Наша команда работает над собственными проектами в разнообразных сферах: от утилит до развлечений и бизнес-приложений. Мы ценим талант и стремление к инновациям и в данный момент ищем талантливого UX/UI дизайнера, готового присоединиться к нашей команде и внести значительный вклад в развитие наших продуктов."
+                    android:textAlignment="textStart"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/card_view_company_location"
+                    tools:ignore="HardcodedText" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/text_view_tasks_header"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/sf_pro_display_semibold"
+                    android:text="Ваши задачи"
+                    android:textColor="@color/white"
+                    android:textSize="22sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/text_view_description"
+                    tools:ignore="HardcodedText" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/text_view_tasks_list"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:text="- Проектирование пользовательского опыта, проведение UX исследований;\n- Разработка адаптивного дизайна интерфейса для мобильных приложений;\n- Разработка быстрых прототипов для тестирования идей дизайна и их последующая интеграция на основе обратной связи от команды и пользователей;\n- Взаимодействие с командой разработчиков для обеспечения точной реализации ваших дизайнов;\n- Анализ пользовательского опыта и адаптация под тренды."
+                    android:textColor="@color/white"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/text_view_tasks_header" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/text_view_question_employer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:fontFamily="@font/sf_pro_display_medium"
+                    android:text="Задайте вопрос работодателю"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="@+id/text_view_tasks_list"
+                    app:layout_constraintTop_toBottomOf="@+id/text_view_tasks_list"
+                    tools:ignore="HardcodedText" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/text_view_response_info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/sf_pro_display_regular"
+                    android:text="Он получит его с откликом на вакансию"
+                    app:layout_constraintStart_toStartOf="@+id/text_view_question_employer"
+                    app:layout_constraintTop_toBottomOf="@+id/text_view_question_employer"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    android:id="@+id/button_location"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="16dp"
+                    android:backgroundTint="@color/grey_1"
+                    android:text="Где расположено место работы?"
+                    android:textColor="@color/white"
+                    app:layout_constraintStart_toStartOf="@+id/text_view_response_info"
+                    app:layout_constraintTop_toBottomOf="@+id/text_view_response_info"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    android:id="@+id/button_schedule"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="8dp"
+                    android:backgroundTint="@color/grey_1"
+                    android:text="Какой график работы?"
+                    android:textColor="@color/white"
+                    app:layout_constraintStart_toStartOf="@+id/text_view_response_info"
+                    app:layout_constraintTop_toBottomOf="@+id/button_location"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    android:id="@+id/button_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="8dp"
+                    android:backgroundTint="@color/grey_1"
+                    android:text="Вакансия открыта?"
+                    android:textColor="@color/white"
+                    app:layout_constraintStart_toStartOf="@+id/button_schedule"
+                    app:layout_constraintTop_toBottomOf="@+id/button_schedule"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    android:id="@+id/button_compensation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="8dp"
+                    android:backgroundTint="@color/grey_1"
+                    android:text="Какая оплата труда?"
+                    android:textColor="@color/white"
+                    app:layout_constraintStart_toStartOf="@+id/button_status"
+                    app:layout_constraintTop_toBottomOf="@+id/button_status"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    android:id="@+id/respond_button"
+                    style="@style/GreenButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="110dp"
+                    android:text="Откликнуться"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/button_compensation"
+                    tools:ignore="HardcodedText" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </ScrollView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

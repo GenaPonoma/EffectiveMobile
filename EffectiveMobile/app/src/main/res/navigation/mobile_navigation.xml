@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_search">
+
+    <fragment
+        android:id="@+id/navigation_search"
+        android:name="com.example.effectivemobile.ui.search.SearchFragment"
+        android:label="@string/title_search"
+        tools:layout="@layout/fragment_search" >
+        <action
+            android:id="@+id/action_NavigationSearch_to_MatchingFragment"
+            app:destination="@id/matchingFragment" />
+        <action
+            android:id="@+id/action_NavigationSearch_to_VacancyFragment"
+            app:destination="@id/vacancyFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_responses"
+        android:name="com.example.effectivemobile.ui.responses.ResponsesFragment"
+        android:label="@string/title_responses"
+        tools:layout="@layout/fragment_responses" >
+        <action
+            android:id="@+id/action_ResponsesFragment_to_SearchFragment"
+            app:destination="@id/navigation_search" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_favorites"
+        android:name="com.example.effectivemobile.ui.favourites.FavouritesFragment"
+        android:label="@string/title_favourites"
+        tools:layout="@layout/fragment_favourites" />
+
+    <fragment
+        android:id="@+id/navigation_message"
+        android:name="com.example.effectivemobile.ui.messages.MessagesFragment"
+        android:label="@string/title_favourites"
+        tools:layout="@layout/fragment_messages" />
+
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="com.example.effectivemobile.ui.profile.ProfileFragment"
+        android:label="@string/title_favourites"
+        tools:layout="@layout/fragment_profile" />
+
+    <fragment
+        android:id="@+id/matchingFragment"
+        android:name="com.example.effectivemobile.ui.matching.MatchingFragment"
+        android:label="MatchingFragment"
+        tools:layout="@layout/fragment_matching">
+        <action
+            android:id="@+id/action_MatchingFragment_to_SearchFragment"
+            app:destination="@id/navigation_search" />
+        <action
+            android:id="@+id/action_MatchingFragment_to_VacancyFragment"
+            app:destination="@id/vacancyFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/vacancyFragment"
+        android:name="com.example.effectivemobile.ui.vacancy.VacancyFragment"
+        android:label="VacancyFragment"
+        tools:layout="@layout/fragment_vacancy">
+        <action
+            android:id="@+id/action_VacancyFragment_to_MatchingFragment"
+            app:destination="@id/matchingFragment"
+            app:popUpTo="@id/vacancyFragment"
+            app:popUpToInclusive="false"/>
+
+        <action
+            android:id="@+id/action_VacancyFragment_to_SearchFragment"
+            app:destination="@id/navigation_search"
+            app:popUpTo="@id/vacancyFragment"
+            app:popUpToInclusive="false"/>
+    </fragment>
+
+</navigation>

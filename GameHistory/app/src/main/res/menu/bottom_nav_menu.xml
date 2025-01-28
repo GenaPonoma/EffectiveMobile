@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/home"
+        android:icon="@drawable/book_history"
+        android:title="@string/title_home" />
+
+    <item
+        android:id="@+id/fovarit"
+        android:icon="@drawable/bookmarks"
+        android:title="@string/title_settings" />
+    <item
+        android:id="@+id/options"
+        android:icon="@drawable/settings"
+        android:title="@string/title_settings" />
+
+</menu>

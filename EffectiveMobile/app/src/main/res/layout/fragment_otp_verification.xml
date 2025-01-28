@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        tools:context=".ui.authorization.OtpVerificationFragment">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/materialTextView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="162dp"
+            android:text="Отправили код на example@mail.ru"
+
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/materialTextView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+
+            android:text="Напишите его, чтобы подтвердить, что это\nвы, а не кто-то другой входит в\nличный кабинет"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintRight_toRightOf="@+id/materialTextView4"
+            app:layout_constraintStart_toStartOf="@+id/materialTextView4"
+            app:layout_constraintTop_toBottomOf="@+id/materialTextView4" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="@+id/materialTextView5"
+            app:layout_constraintTop_toBottomOf="@+id/materialTextView5">
+
+            <EditText
+                android:id="@+id/pin_code_input_1"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="@drawable/pin_code_field"
+                android:gravity="center"
+                android:hint="*"
+                android:inputType="numberPassword"
+                android:maxLength="1"
+                android:textColor="@color/white"
+                android:textColorHint="@color/grey_3"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/pin_code_input_2"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/pin_code_field"
+                android:gravity="center"
+                android:hint="*"
+                android:inputType="numberPassword"
+                android:maxLength="1"
+                android:textColor="@android:color/black"
+                android:textColorHint="@color/grey_3"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/pin_code_input_3"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/pin_code_field"
+                android:gravity="center"
+                android:hint="*"
+                android:inputType="numberPassword"
+                android:maxLength="1"
+                android:textColor="@android:color/black"
+                android:textColorHint="@color/grey_3"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/pin_code_input_4"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/pin_code_field"
+                android:gravity="center"
+                android:hint="*"
+                android:importantForAutofill="no"
+                android:inputType="numberPassword"
+                android:maxLength="1"
+                android:textColor="@android:color/black"
+                android:textColorHint="@color/grey_3"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="@+id/materialTextView5"
+                app:layout_constraintStart_toStartOf="@+id/materialTextView5"
+                app:layout_constraintTop_toBottomOf="@+id/materialTextView5" />
+        </LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_next_activity"
+            style="@style/BlueButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="15dp"
+            android:background="@drawable/button_background"
+            android:text="Подтвердить"
+            android:textAllCaps="false"
+            app:layout_constraintEnd_toEndOf="@+id/materialTextView4"
+            app:layout_constraintHorizontal_bias="0.487"
+            app:layout_constraintStart_toStartOf="@+id/materialTextView4"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
