@@ -1,6 +1,7 @@
 package com.example.effectivemobile.ui.search
 
 
+
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -12,6 +13,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
 import com.example.effectivemobile.R
+import com.example.effectivemobile.app.App
 import com.example.effectivemobile.databinding.FragmentSearchBinding
 import com.example.effectivemobile.ui.search.adapter.OfferAdapter
 import com.example.effectivemobile.ui.search.adapter.VacancyAdapter
@@ -24,12 +26,15 @@ class SearchFragment : Fragment() {
     private val binding get() = _binding!!
     private val offerAdapter = OfferAdapter()
     private val vacancyAdapter = VacancyAdapter { itemId -> viewModel.saveItemToDatabase(itemId) }
-    private val viewModel: SearchViewModel by viewModels { SearchViewModelFactory() }
+    private val viewModel: SearchViewModel by viewModels { SearchViewModelFactory((requireActivity().application as App).db.vacancyDao()) }
+
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+
         _binding = FragmentSearchBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -43,6 +48,7 @@ class SearchFragment : Fragment() {
             findNavController().navigate(R.id.action_NavigationSearch_to_MatchingFragment)
         }
     }
+
     private fun observeData() {
         viewLifecycleOwner.lifecycleScope.launch {
             viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
@@ -51,6 +57,9 @@ class SearchFragment : Fragment() {
                 }
                 launch {
                     viewModel.getVacancy()
+                }
+                launch {
+                    viewModel.insertItemToDatabase()
                 }
             }
         }

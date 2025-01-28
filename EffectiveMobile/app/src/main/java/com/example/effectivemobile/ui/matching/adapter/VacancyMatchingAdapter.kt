@@ -8,12 +8,6 @@ import androidx.navigation.Navigation
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.example.effectivemobile.Constants.COMPANY
-import com.example.effectivemobile.Constants.EXPERIENCE
-import com.example.effectivemobile.Constants.PUBLISHED_DATE
-import com.example.effectivemobile.Constants.TITLE
-import com.example.effectivemobile.Constants.TOWN
-import com.example.effectivemobile.Constants.VACANCY_ID
 import com.example.effectivemobile.R
 import com.example.effectivemobile.data.model.Vacancy
 import com.example.effectivemobile.databinding.RecyclerVacanciesViewBinding

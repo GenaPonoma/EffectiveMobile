@@ -12,6 +12,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
 import com.example.effectivemobile.R
+import com.example.effectivemobile.app.App
 import com.example.effectivemobile.databinding.FragmentMatchingBinding
 import com.example.effectivemobile.ui.matching.adapter.VacancyMatchingAdapter
 import kotlinx.coroutines.launch
@@ -23,7 +24,7 @@ class MatchingFragment : Fragment() {
     private val binding get() = _binding!!
     private val matchingAdapter = VacancyMatchingAdapter()
 
-    private val viewModel: MatchingViewModel by viewModels { MatchingViewModelFactory() }
+    private val viewModel: MatchingViewModel by viewModels { MatchingViewModelFactory((requireActivity().application as App).db.vacancyDao()) }
 
 
     override fun onCreateView(
