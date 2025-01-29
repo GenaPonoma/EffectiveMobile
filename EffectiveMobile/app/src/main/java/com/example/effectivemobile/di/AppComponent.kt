@@ -1,5 +1,6 @@
 package com.example.effectivemobile.di
 
+import com.example.effectivemobile.MainActivity
 import com.example.effectivemobile.app.App
 import com.example.effectivemobile.ui.favourites.FavouritesFragment
 import com.example.effectivemobile.ui.matching.MatchingFragment
@@ -14,4 +15,5 @@ interface AppComponent {
     fun inject(app: App)
     fun inject(matchingFragment: MatchingFragment)
     fun inject(favouritesFragment: FavouritesFragment)
+    fun inject(mainActivity: MainActivity)
 }

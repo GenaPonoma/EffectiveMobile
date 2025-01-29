@@ -22,11 +22,22 @@ class SearchViewModel @Inject constructor(private val repository: MainRepository
     private val _vacancies = MutableLiveData<List<Vacancy>>()
     val vacancycies: LiveData<List<Vacancy>> get() = _vacancies
 
-
+    fun onItemClicked(itemId: String) {
+        viewModelScope.launch {
+            val vacancy = repository.getVacancyById(itemId)
+            if (vacancy != null) {
+                if (vacancy.isFavorite!!) {
+                    repository.toggleFavorite(itemId)
+                } else {
+                    repository.deleteVacancy(itemId)
+                }
+            }
+        }
+    }
 
     fun insertItemToDatabase() {
         viewModelScope.launch(Dispatchers.IO) {
-            vacancycies.asFlow().collect {
+            vacancycies.asFlow().collect { it ->
                 Log.d("toggleFavorite", "toggleFavorite: ${vacancycies.value}")
                 it.forEach {
                     repository.insertVacancy(it)

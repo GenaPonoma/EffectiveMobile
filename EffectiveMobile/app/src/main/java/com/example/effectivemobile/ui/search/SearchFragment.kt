@@ -30,7 +30,7 @@ class SearchFragment : Fragment() {
     private val binding get() = _binding!!
 
     private val offerAdapter = OfferAdapter()
-    private val vacancyAdapter = VacancyAdapter { itemId -> viewModel.saveItemToDatabase(itemId) }
+    private val vacancyAdapter = VacancyAdapter { itemId -> viewModel.onItemClicked(itemId) }
 
     private val viewModel: SearchViewModel by viewModels { searchViewModelFactory }
 

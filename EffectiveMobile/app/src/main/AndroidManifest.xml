@@ -22,10 +22,7 @@
         android:supportsRtl="true"
         android:theme="@style/Base.Theme.EffectiveMobile"
         tools:targetApi="31">
-        <activity
-            android:name=".ui.MainActivityu"
-            android:exported="false"
-            android:label="@string/title_activity_main_activityu" />
+
         <activity
             android:name=".MainActivity"
             android:exported="false"

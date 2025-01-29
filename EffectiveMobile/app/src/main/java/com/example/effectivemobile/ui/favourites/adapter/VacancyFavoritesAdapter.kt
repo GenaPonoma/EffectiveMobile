@@ -10,7 +10,7 @@ import com.example.effectivemobile.R
 import com.example.effectivemobile.data.model.Vacancy
 import com.example.effectivemobile.databinding.RecyclerVacanciesViewBinding
 
-class VacancyFavoritesAdapter() :
+class VacancyFavoritesAdapter(private val onItemClicked: (String) -> Unit) :
     ListAdapter<Vacancy, VacancyFavoritesViewHolder>(VacancyMatchingDiffCallback()) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VacancyFavoritesViewHolder {
         val binding =
@@ -55,11 +55,12 @@ class VacancyFavoritesAdapter() :
                     if (item.isFavorite == true) {
                         item.isFavorite = false
                         iconFavorites.setImageResource(R.drawable.favorites)
+                        onItemClicked(item.id.toString())
                     } else {
+                        onItemClicked(item.id.toString())
                         iconFavorites.setImageResource(R.drawable.favorit_active)
                         item.isFavorite = true
                     }
-
                 }
 
             }

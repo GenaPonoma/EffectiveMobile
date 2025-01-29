@@ -14,8 +14,6 @@ import androidx.navigation.fragment.findNavController
 import com.example.effectivemobile.R
 import com.example.effectivemobile.app.App
 import com.example.effectivemobile.databinding.FragmentMatchingBinding
-import com.example.effectivemobile.ui.matching.MatchingViewModel
-import com.example.effectivemobile.ui.matching.MatchingViewModelFactory
 import com.example.effectivemobile.ui.matching.adapter.VacancyMatchingAdapter
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -28,7 +26,7 @@ class MatchingFragment : Fragment() {
     private var _binding: FragmentMatchingBinding? = null
     private val binding get() = _binding!!
 
-    private val matchingAdapter = VacancyMatchingAdapter()
+    private val matchingAdapter = VacancyMatchingAdapter{itemId -> viewModel.onItemClicked(itemId)}
     private val viewModel: MatchingViewModel by viewModels { matchingViewModelFactory }
 
     override fun onCreate(savedInstanceState: Bundle?) {

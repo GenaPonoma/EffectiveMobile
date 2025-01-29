@@ -17,6 +17,9 @@ class MainRepository @Inject constructor(private val dao: VacancyDao) {
             "download"
         )
     }
+    suspend fun deleteVacancy(vacancyId: String) {
+        dao.deleteVacancyById(vacancyId)
+    }
 
     suspend fun toggleFavorite(vacancyId: String) {
         val vacancy = dao.getVacancyById(vacancyId)
@@ -39,7 +42,7 @@ class MainRepository @Inject constructor(private val dao: VacancyDao) {
         return dao.getFavorites()
     }
 
-    private suspend fun getVacancyById(vacancyId: String): Vacancy? {
+    suspend fun getVacancyById(vacancyId: String): Vacancy? {
         return withContext(Dispatchers.IO) {
             dao.getVacancyById(vacancyId)
         }

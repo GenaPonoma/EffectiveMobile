@@ -24,7 +24,8 @@ class FavouritesFragment : Fragment() {
     lateinit var viewModelFactory: FavoritesViewModelFactory
 
     private val viewModel: FavouritesViewModel by viewModels { viewModelFactory }
-    private val vacancyAdapter = VacancyFavoritesAdapter()
+    private val vacancyAdapter =
+        VacancyFavoritesAdapter { itemId -> viewModel.onItemClicked(itemId) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -48,6 +49,7 @@ class FavouritesFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding.recyclerFavoritesView.adapter = vacancyAdapter
         observeData()
+
     }
 
     private fun observeData() {

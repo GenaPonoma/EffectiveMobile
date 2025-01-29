@@ -20,4 +20,8 @@ interface VacancyDao {
 
     @Query("SELECT * FROM vacancy WHERE isFavorite = 1")
     fun getFavorites(): LiveData<List<Vacancy>>
+    // VacancyDao.kt
+    @Query("DELETE FROM vacancy WHERE id = :vacancyId")
+    suspend fun deleteVacancyById(vacancyId: String)
+
 }
