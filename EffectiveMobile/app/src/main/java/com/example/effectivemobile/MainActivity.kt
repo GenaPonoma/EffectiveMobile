@@ -34,10 +34,10 @@ class MainActivity : AppCompatActivity() {
                 R.id.navigation_message -> replaceFragment(MessagesFragment())
                 R.id.navigation_profile -> replaceFragment(ProfileFragment())
             }
-            var badge = binding.bottomNavigation.getOrCreateBadge(item.itemId)
-            badge.isVisible = true
-            // An icon only badge will be displayed unless a number or text is set:
-            badge.number = 99
+//            var badge = binding.bottomNavigation.getOrCreateBadge(item.itemId)
+//            badge.isVisible = true
+//            // An icon only badge will be displayed unless a number or text is set:
+//            badge.number = 99
             true
         }
     }

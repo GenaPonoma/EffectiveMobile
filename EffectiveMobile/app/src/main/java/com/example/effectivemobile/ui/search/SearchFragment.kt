@@ -78,8 +78,10 @@ class SearchFragment : Fragment() {
                 remainingCount
             )
             if (vacancies.size > 3) {
+                binding.nextToMatching.visibility = View.VISIBLE
                 vacancyAdapter.submitList(vacancies.subList(0, 3))
             } else {
+                binding.nextToMatching.visibility = View.VISIBLE
                 vacancyAdapter.submitList(vacancies)
             }
         }

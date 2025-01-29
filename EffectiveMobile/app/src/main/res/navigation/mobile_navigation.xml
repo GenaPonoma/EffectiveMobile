@@ -9,10 +9,10 @@
         android:id="@+id/navigation_search"
         android:name="com.example.effectivemobile.ui.search.SearchFragment"
         android:label="@string/title_search"
-        tools:layout="@layout/fragment_search" >
+        tools:layout="@layout/fragment_search">
         <action
             android:id="@+id/action_NavigationSearch_to_MatchingFragment"
-            app:destination="@id/matchingFragment" />
+            app:destination="@id/navigation_Matching" />
         <action
             android:id="@+id/action_NavigationSearch_to_VacancyFragment"
             app:destination="@id/vacancyFragment" />
@@ -22,17 +22,18 @@
         android:id="@+id/navigation_responses"
         android:name="com.example.effectivemobile.ui.responses.ResponsesFragment"
         android:label="@string/title_responses"
-        tools:layout="@layout/fragment_responses" >
-        <action
-            android:id="@+id/action_ResponsesFragment_to_SearchFragment"
-            app:destination="@id/navigation_search" />
-    </fragment>
+        tools:layout="@layout/fragment_responses"/>
 
     <fragment
         android:id="@+id/navigation_favorites"
         android:name="com.example.effectivemobile.ui.favourites.FavouritesFragment"
         android:label="@string/title_favourites"
-        tools:layout="@layout/fragment_favourites" />
+
+        tools:layout="@layout/fragment_favourites">
+        <action
+            android:id="@+id/action_navigation_favorites_to_navigation_Matching"
+            app:destination="@id/navigation_Matching" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_message"
@@ -47,7 +48,7 @@
         tools:layout="@layout/fragment_profile" />
 
     <fragment
-        android:id="@+id/matchingFragment"
+        android:id="@+id/navigation_Matching"
         android:name="com.example.effectivemobile.ui.matching.MatchingFragment"
         android:label="MatchingFragment"
         tools:layout="@layout/fragment_matching">
@@ -57,6 +58,9 @@
         <action
             android:id="@+id/action_MatchingFragment_to_VacancyFragment"
             app:destination="@id/vacancyFragment" />
+        <action
+            android:id="@+id/action_navigation_Matching_to_navigation_favorites"
+            app:destination="@id/navigation_favorites" />
     </fragment>
 
     <fragment
@@ -66,15 +70,19 @@
         tools:layout="@layout/fragment_vacancy">
         <action
             android:id="@+id/action_VacancyFragment_to_MatchingFragment"
-            app:destination="@id/matchingFragment"
+            app:destination="@id/navigation_Matching"
             app:popUpTo="@id/vacancyFragment"
-            app:popUpToInclusive="false"/>
+            app:popUpToInclusive="false" />
 
         <action
             android:id="@+id/action_VacancyFragment_to_SearchFragment"
             app:destination="@id/navigation_search"
             app:popUpTo="@id/vacancyFragment"
-            app:popUpToInclusive="false"/>
+            app:popUpToInclusive="false" />
+        <action
+            android:id="@+id/action_vacancyFragment_to_navigation_favorites"
+            app:destination="@id/navigation_favorites" />
     </fragment>
+    <include app:graph="@navigation/nav_graph" />
 
 </navigation>

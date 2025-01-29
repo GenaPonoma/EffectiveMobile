@@ -57,9 +57,7 @@ class FavouritesFragment : Fragment() {
                 launch {
                     viewModel.getVacancy()
                 }
-                launch {
-//                    viewModel.insertItemToDatabase()
-                }
+
             }
         }
 
