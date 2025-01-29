@@ -1,6 +1,7 @@
 package com.example.effectivemobile.ui.search
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,6 +10,8 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import androidx.navigation.NavController
+import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import com.example.effectivemobile.R
 import com.example.effectivemobile.app.App
@@ -47,9 +50,11 @@ class SearchFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val navController = Navigation.findNavController(view)
         setupAdapters()
         observeData()
-        setupNavigation()
+
+        setupNavigation(navController)
     }
 
     private fun setupAdapters() {
@@ -87,9 +92,13 @@ class SearchFragment : Fragment() {
         }
     }
 
-    private fun setupNavigation() {
-        binding.nextToMatching.setOnClickListener {
-            findNavController().navigate(R.id.action_NavigationSearch_to_MatchingFragment)
+    private fun setupNavigation(navController: NavController) {
+        if (navController.graph != null) {
+            binding.nextToMatching.setOnClickListener {
+                navController.navigate(R.id.action_NavigationSearch_to_MatchingFragment)
+            }
+        } else {
+            Log.d("Контроллера уже нет, УПС", "NavController is null")
         }
     }
 
